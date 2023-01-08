@@ -9,7 +9,8 @@ while true; do
     echo "2. Quitar el modo monitor"
     echo "3. Hacer un Deauth"
     echo "4. Hacer un escaneo"
-    echo "5. Salir"
+    echo "5. Crackear handshake"
+    echo "6. Salir"
     read -p "Opcion: " opcion
     
     case $opcion in
@@ -21,7 +22,7 @@ while true; do
             macchanger -br wlan0
             ifconfig wlan0 up
             
-            read -p "Pulsa enter para volver al menú"
+            read -p "Enter para volver al menú"
         ;;
         2)
             # Mon mode off
@@ -44,8 +45,19 @@ while true; do
             read -p "Enter para volver al menú"
         ;;
         5)
-            # Salir del programa
-            break
-        ;;
+            # Enter handshake file
+            read -p "Ingresa la ruta del archivo handshake: " handshake_file
+            
+            # Enter wordlist for bruteforce
+            read -p "Ingresa la ruta del diccionario a usar: " wordlist_file
+            
+            # Cracking Handshake
+            aircrack-ng $handshake_file -w $wordlist_file
+            
+            read -p "Enter para volver al menú"
+            6)
+                # Salir del programa
+                break
+            ;;
     esac
 done
