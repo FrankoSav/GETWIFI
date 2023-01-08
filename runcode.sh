@@ -2,6 +2,7 @@
 
 # Mostrar el menú de opciones
 while true; do
+toilet -f small "FrankoSav"
     clear
     echo "Elegí una opción:"
     echo "1. Falsificar MAC y encender modo monitor"
