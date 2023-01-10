@@ -1,9 +1,11 @@
 #!/bin/bash
 
-# Mostrar el menú de opciones
+sudo apt install figlet
+
+# Menú
 while true; do
     clear
-    toilet -f small "FrankoSav"
+    figlet "FrankoSav"
     echo "Elegí una opción:"
     echo "1. Falsificar MAC y encender modo monitor"
     echo "2. Quitar el modo monitor"
