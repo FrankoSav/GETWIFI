@@ -19,7 +19,7 @@ while true; do
         1)
             # Mon mode on and changed mac
             ifconfig wlan0 down
-            iwconfig wlan0 mode monitor
+            airmon-ng wlan0 mode monitor
             airmon-ng check kill
             macchanger -br wlan0
             ifconfig wlan0 up
@@ -43,7 +43,7 @@ while true; do
         ;;
         4)
             # Scan with interface
-            iwlist wlan0 scan | grep ESSID
+            sudo airodump-ng wlan0
             read -p "Enter para volver al menú"
         ;;
         5)
