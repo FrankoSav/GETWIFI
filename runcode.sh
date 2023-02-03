@@ -20,7 +20,8 @@ while true; do
       # Mon mode on and changed mac
       sudo airmon-ng start wlan0
       sudo airmon-ng check kill
-
+      sudo ip link set wlan0 name wlan0mon
+      
       read -p "Enter para volver al menú"
       ;;
     2)
