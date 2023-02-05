@@ -18,9 +18,11 @@ while true; do
   case $opcion in
     1)
       # Mon mode on and changed mac
-      sudo airmon-ng start wlan0
       sudo airmon-ng check kill
+      sudo ip link set wlan0 down
       sudo ip link set wlan0 name wlan0mon
+      sudo ip link set wlan0mon up
+      sudo airmon-ng start wlan0mon
       
       read -p "Enter para volver al menú"
       ;;
